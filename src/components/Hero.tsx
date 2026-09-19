@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import SocialLinks from '@/components/SocialLinks';
 import { profile, site } from '@/lib/data';
 
 export default function Hero() {
@@ -33,8 +32,6 @@ export default function Hero() {
             {site.hero.secondaryCta.label}
           </Link>
         </div>
-
-        <SocialLinks className="mt-9" />
       </div>
 
       <div className="relative mx-auto w-full max-w-sm lg:max-w-[400px]">

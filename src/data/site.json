@@ -68,8 +68,8 @@
       "title": "Hubungi Saya",
       "subtitle": "Terbuka untuk diskusi, kolaborasi, maupun peluang kerja di bidang infrastruktur dan teknologi.",
       "cta": {
-        "label": "Kirim Email",
-        "note": "Balasan biasanya dalam satu hari kerja."
+        "label": "Buka Portal",
+        "note": "Semua kanal kontak dan tautan saya terkumpul di satu halaman."
       }
     }
   },
@@ -84,7 +84,7 @@
     "detail": "Lihat Detail",
     "menu": "Menu",
     "toggleTheme": "Ganti tema",
-    "channels": "Kanal Lain"
+    "portal": "Portal"
   },
   "footer": {
     "tagline": "Dibangun dengan Next.js & Tailwind CSS.",
