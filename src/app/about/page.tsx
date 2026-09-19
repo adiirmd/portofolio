@@ -34,7 +34,7 @@ export default function AboutPage() {
     <>
       <PageHeader eyebrow={section.eyebrow} title={section.title} />
 
-      <section className="shell grid gap-10 pb-12 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
+      <section className="shell grid gap-10 pb-14 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
         <div>
           <p className="muted text-[17px] leading-[1.8]">{profile.bio}</p>
 

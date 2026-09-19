@@ -23,7 +23,7 @@ export default function ContactPage() {
     <>
       <PageHeader eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} />
 
-      <section className="shell pb-16">
+      <section className="shell pb-20">
         <div className="surface flex flex-col items-start gap-6 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
           <div className="flex items-center gap-4">
             <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent/12 text-accent">

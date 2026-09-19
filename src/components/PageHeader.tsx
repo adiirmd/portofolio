@@ -6,10 +6,12 @@ type Props = {
 
 export default function PageHeader({ eyebrow, title, subtitle }: Props) {
   return (
-    <section className="shell pb-10 pt-12 sm:pt-16">
+    <section className="shell pb-12 pt-16 sm:pb-14 sm:pt-20">
       <p className="eyebrow">{eyebrow}</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-      {subtitle ? <p className="muted mt-4 max-w-2xl text-[17px] leading-relaxed">{subtitle}</p> : null}
+      <h1 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">{title}</h1>
+      {subtitle ? (
+        <p className="muted mt-5 max-w-3xl text-[17px] leading-[1.75]">{subtitle}</p>
+      ) : null}
     </section>
   );
 }
