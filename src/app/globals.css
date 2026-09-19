@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f8fc;
+  --bg-elevated: #ffffff;
+  --surface: 255 255 255;
+  --surface-alpha: 1;
+  --border: 15 23 42;
+  --border-alpha: 0.1;
+  --text: #0b1220;
+  --text-muted: #55617a;
+  --text-faint: #7b869c;
+  --glow-a: rgba(59, 130, 246, 0.18);
+  --glow-b: rgba(37, 99, 235, 0.1);
+}
+
+.dark {
+  --bg: #05070d;
+  --bg-elevated: #0a0e1a;
+  --surface: 255 255 255;
+  --surface-alpha: 0.035;
+  --border: 255 255 255;
+  --border-alpha: 0.08;
+  --text: #eef2f9;
+  --text-muted: #9aa6bd;
+  --text-faint: #6b7688;
+  --glow-a: rgba(37, 99, 235, 0.22);
+  --glow-b: rgba(59, 130, 246, 0.12);
+}
+
+* {
+  border-color: rgb(var(--border) / var(--border-alpha));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-6 lg:px-8;
+  }
+
+  .surface {
+    background-color: rgb(var(--surface) / var(--surface-alpha));
+    border: 1px solid rgb(var(--border) / var(--border-alpha));
+    @apply rounded-2xl;
+  }
+
+  .surface-hover {
+    @apply transition duration-300 hover:border-accent/50 hover:shadow-[0_18px_45px_-25px_rgba(59,130,246,0.65)];
+  }
+
+  .muted {
+    color: var(--text-muted);
+  }
+
+  .faint {
+    color: var(--text-faint);
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium tracking-wide;
+    background-color: rgb(var(--surface) / calc(var(--surface-alpha) + 0.03));
+    border: 1px solid rgb(var(--border) / var(--border-alpha));
+    color: var(--text-muted);
+  }
+
+  .badge-accent {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-medium text-accent-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition;
+    border: 1px solid rgb(var(--border) / calc(var(--border-alpha) + 0.06));
+    color: var(--text);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgb(59 130 246 / 0.5);
+    color: #60a5fa;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-lg transition;
+    border: 1px solid rgb(var(--border) / var(--border-alpha));
+    color: var(--text-muted);
+  }
+
+  .icon-btn:hover {
+    border-color: rgb(59 130 246 / 0.5);
+    color: #60a5fa;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+
+  .gradient-name {
+    @apply bg-gradient-to-r from-accent-soft via-accent to-accent-deep bg-clip-text text-transparent;
+  }
+}
+
+.glow-backdrop {
+  background:
+    radial-gradient(700px circle at 15% -5%, var(--glow-a), transparent 60%),
+    radial-gradient(600px circle at 85% 10%, var(--glow-b), transparent 55%);
+}
+
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, rgb(var(--border) / calc(var(--border-alpha) * 0.7)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--border) / calc(var(--border-alpha) * 0.7)) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #fff;
+}
