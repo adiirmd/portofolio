@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Automated Finance Tracker",
+    "description": "Sistem catatan keuangan pribadi otomatis. Setiap notif transaksi di HP diteruskan ke webhook dan ditulis langsung ke Google Sheets. Dilengkapi web dashboard untuk edit manual dan bot Telegram untuk rekap harian jam 23:58 serta alert pengeluaran kelipatan 50k buat kontrol finansial.",
+    "tech": ["Node.js", "Webhooks", "Google Sheets API", "Telegram Bot API"],
+    "image": "/images/finance-tracker.webp",
+    "link": "https://link-web-lu.com",
+    "github": "https://github.com/username-lu/repo-finance"
+  },
+  {
+    "title": "Web Streaming Music Player",
+    "description": "Web app pemutar musik streaming mengambil data dari API YouTube Music dengan UI mirip Spotify. Dilengkapi berbagai fitur seperti unduh lagu dan nampilin lirik secara real time.",
+    "tech": ["Next.js", "Tailwind CSS", "YouTube Music API"],
+    "image": "/images/web-music.webp",
+    "link": "https://link-web-lu.com",
+    "github": "https://github.com/username-lu/repo-music"
+  }
+]
