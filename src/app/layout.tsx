@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: '/images/profile.jpg',
-        width: 1200,
-        height: 1200,
+        url: profile.photos.home.src,
+        width: profile.photos.home.width,
+        height: profile.photos.home.height,
         alt: profile.name,
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: site.title,
     description: site.description,
-    images: ['/images/profile.jpg'],
+    images: [profile.photos.home.src],
   },
   robots: {
     index: true,

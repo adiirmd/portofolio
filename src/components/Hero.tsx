@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import ProfilePhoto from '@/components/ProfilePhoto';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { profile, site } from '@/lib/data';
 
@@ -34,31 +34,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-sm lg:max-w-[400px]">
-        <div
-          className="absolute -right-4 top-8 hidden h-full w-full rotate-6 rounded-3xl border border-accent/25 bg-accent/5 sm:block"
-          aria-hidden
+      <div className="mx-auto w-full max-w-sm lg:max-w-[400px]">
+        <ProfilePhoto
+          src={profile.photos.home}
+          alt={profile.name}
+          priority
+          sizes="(max-width: 1024px) 90vw, 400px"
         />
-        <div
-          className="absolute -right-2 top-4 hidden h-full w-full rotate-3 rounded-3xl border border-accent/20 bg-accent/[0.03] sm:block"
-          aria-hidden
-        />
-        <div className="surface relative overflow-hidden rounded-3xl p-2 animate-float">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-            <Image
-              src="/images/profile.jpg"
-              alt={profile.name}
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 440px"
-              className="object-cover object-top"
-            />
-          </div>
-          <div
-            className="pointer-events-none absolute inset-2 rounded-2xl bg-gradient-to-t from-ink-950/60 via-transparent to-transparent"
-            aria-hidden
-          />
-        </div>
       </div>
     </section>
   );

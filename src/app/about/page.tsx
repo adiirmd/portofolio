@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Briefcase, Mail, MapPin, User } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import ProfilePhoto from '@/components/ProfilePhoto';
 import { profile, site } from '@/lib/data';
 
 const section = site.sections.about;
@@ -71,22 +71,12 @@ export default function AboutPage() {
           </ul>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xs lg:sticky lg:top-28 lg:max-w-none">
-          <div
-            className="absolute -right-3 top-5 hidden h-full w-full rotate-6 rounded-3xl border border-accent/25 bg-accent/5 sm:block"
-            aria-hidden
+        <div className="mx-auto w-full max-w-xs lg:sticky lg:top-28 lg:max-w-none">
+          <ProfilePhoto
+            src={profile.photos.about}
+            alt={profile.name}
+            sizes="(max-width: 1024px) 80vw, 340px"
           />
-          <div className="surface relative overflow-hidden rounded-3xl p-2">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/profile.jpg"
-                alt={profile.name}
-                fill
-                sizes="(max-width: 1024px) 80vw, 340px"
-                className="object-cover object-top"
-              />
-            </div>
-          </div>
         </div>
       </section>
 

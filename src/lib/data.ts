@@ -1,38 +1,12 @@
-import profileJson from '@/data/profile.json';
-import projectsJson from '@/data/projects.json';
-import siteJson from '@/data/site.json';
+import { profile } from '@/data/profile';
+import { projects } from '@/data/projects';
+import { site } from '@/data/site';
+import type { NavItem } from '@/lib/types';
 
-export type Experience = {
-  title: string;
-  company: string;
-  duration: string;
-};
+export type { Experience, NavItem, Profile, Project } from '@/lib/types';
+export { profile, projects, site };
 
-export type Profile = {
-  name: string;
-  role: string;
-  location: string;
-  bio: string;
-  experience: Experience[];
-  skills: string[];
-  socials: Record<string, string>;
-};
-
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  image: string;
-  link: string;
-  github: string;
-};
-
-export type NavItem = { label: string; href: string };
-
-export const profile = profileJson as Profile;
-export const projects = projectsJson as Project[];
-export const site = siteJson;
-export const nav = siteJson.nav as NavItem[];
+export const nav = site.nav as NavItem[];
 
 export const socialEntries = Object.entries(profile.socials) as [string, string][];
 
