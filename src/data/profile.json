@@ -1,8 +1,8 @@
 {
   "name": "Adi Romadhon",
-  "role": "IT Enthusiast & Data Center Operator",
+  "role": "IT Infrastructure & Data Center Operator",
   "location": "Jakarta, Indonesia",
-  "bio": "Penyuka IT terutama di bidang infrastruktur, server, OS, jaringan internet, dan routing. Suka ngulik hal baru dan punya ketertarikan di bidang cyber security. Saat ini fokus ngelola infrastruktur data center dan bikin automasi buat bantu keseharian.",
+  "bio": "Saya seorang praktisi IT yang berfokus pada infrastruktur, administrasi server, sistem operasi, serta jaringan dan routing. Saat ini saya menangani operasional infrastruktur data center, memastikan ketersediaan layanan tetap terjaga dan setiap insiden tertangani dengan cepat. Di luar itu saya menaruh minat besar pada cyber security dan terbiasa merancang automasi untuk menyederhanakan pekerjaan operasional yang berulang.",
   "experience": [
     {
       "title": "Data Center Operator",
@@ -16,7 +16,14 @@
     }
   ],
   "skills": [
-    "Linux", "Networking", "Routing", "Server Administration", "Cyber Security Basics", "Next.js", "Node.js", "Telegram Bot API"
+    "Linux",
+    "Networking",
+    "Routing",
+    "Server Administration",
+    "Cyber Security Basics",
+    "Next.js",
+    "Node.js",
+    "Telegram Bot API"
   ],
   "socials": {
     "github": "https://github.com/adiirmd",

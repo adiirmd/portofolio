@@ -29,21 +29,13 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'backdrop-blur-xl' : ''
+        scrolled || open ? 'nav-scrolled' : ''
       }`}
-      style={
-        scrolled
-          ? {
-              backgroundColor: 'rgb(var(--surface) / calc(var(--surface-alpha) + 0.02))',
-              borderBottom: '1px solid rgb(var(--border) / var(--border-alpha))',
-            }
-          : undefined
-      }
     >
-      <nav className="shell flex h-16 items-center justify-between" aria-label="Main">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
-            <Terminal className="h-4 w-4" />
+      <nav className="shell flex h-[72px] items-center justify-between" aria-label="Main">
+        <Link href="/" className="flex items-center gap-2.5 text-[17px] font-semibold tracking-tight">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 text-accent">
+            <Terminal className="h-[18px] w-[18px]" />
           </span>
           <span>{site.brand}</span>
         </Link>
@@ -53,7 +45,7 @@ export default function Navbar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`rounded-full px-4 py-2 text-sm transition ${
+                className={`rounded-full px-4 py-2 text-[15px] transition ${
                   isActive(item.href) ? 'text-accent-soft' : 'muted hover:text-accent-soft'
                 }`}
                 aria-current={isActive(item.href) ? 'page' : undefined}
@@ -74,7 +66,7 @@ export default function Navbar() {
             aria-controls="mobile-nav"
             aria-label={site.labels.menu}
           >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {open ? <X className="h-[18px] w-[18px]" /> : <Menu className="h-[18px] w-[18px]" />}
           </button>
         </div>
       </nav>
@@ -93,7 +85,7 @@ export default function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`block rounded-xl px-3 py-2.5 text-sm transition ${
+                  className={`block rounded-xl px-3 py-3 text-[15px] transition ${
                     isActive(item.href) ? 'bg-accent/10 text-accent-soft' : 'muted'
                   }`}
                 >

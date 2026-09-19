@@ -13,7 +13,7 @@ export default function HomePage() {
       <JsonLd data={projectsSchema()} />
       <Hero />
 
-      <section className="shell py-8 sm:py-12" id="featured">
+      <section className="shell pb-16 pt-4" id="featured">
         <SectionHeading
           eyebrow={featured.eyebrow}
           title={featured.title}
@@ -21,7 +21,7 @@ export default function HomePage() {
           action={{ label: featured.viewAll, href: '/projects' }}
         />
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-6 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

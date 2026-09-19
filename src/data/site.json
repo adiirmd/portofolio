@@ -1,8 +1,8 @@
 {
   "url": "https://adiirmd.my.id",
   "brand": "adiirmd",
-  "title": "Adi Romadhon | IT Enthusiast & Data Center Operator",
-  "description": "Portofolio Adi Romadhon, IT Enthusiast & Data Center Operator dari Jakarta, Indonesia. Fokus di infrastruktur, server, jaringan, routing, dan automasi.",
+  "title": "Adi Romadhon | IT Infrastructure & Data Center Operator",
+  "description": "Portofolio Adi Romadhon, IT Infrastructure & Data Center Operator dari Jakarta, Indonesia. Berfokus pada infrastruktur, server, jaringan, routing, dan automasi.",
   "keywords": [
     "Adi Romadhon",
     "adiirmd",
@@ -16,21 +16,39 @@
   "locale": "id_ID",
   "language": "id",
   "nav": [
-    { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" },
-    { "label": "Projects", "href": "/projects" },
-    { "label": "Contact", "href": "/contact" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
   ],
   "hero": {
     "greeting": "Hi, I'm",
-    "primaryCta": { "label": "Lihat Project", "href": "/projects" },
-    "secondaryCta": { "label": "Tentang Saya", "href": "/about" }
+    "primaryCta": {
+      "label": "Lihat Project",
+      "href": "/projects"
+    },
+    "secondaryCta": {
+      "label": "Tentang Saya",
+      "href": "/about"
+    }
   },
   "sections": {
     "featured": {
       "eyebrow": "My Works",
       "title": "Featured Projects",
-      "subtitle": "Beberapa project pilihan yang pernah saya kerjakan.",
+      "subtitle": "Sebagian project yang saya kerjakan dan kembangkan.",
       "viewAll": "View All"
     },
     "about": {
@@ -43,12 +61,16 @@
     "projects": {
       "eyebrow": "Portfolio",
       "title": "Project Saya",
-      "subtitle": "Kumpulan project yang pernah saya kerjakan, mulai dari automasi sampai web app."
+      "subtitle": "Kumpulan pekerjaan yang saya bangun, mulai dari automasi operasional hingga aplikasi web."
     },
     "contact": {
       "eyebrow": "Say Hello",
       "title": "Hubungi Saya",
-      "subtitle": "Terbuka untuk diskusi, kolaborasi, atau sekadar ngobrol soal infrastruktur dan teknologi."
+      "subtitle": "Terbuka untuk diskusi, kolaborasi, maupun peluang kerja di bidang infrastruktur dan teknologi.",
+      "cta": {
+        "label": "Kirim Email",
+        "note": "Balasan biasanya dalam satu hari kerja."
+      }
     }
   },
   "labels": {
@@ -61,7 +83,8 @@
     "techStack": "Tech Stack",
     "detail": "Lihat Detail",
     "menu": "Menu",
-    "toggleTheme": "Ganti tema"
+    "toggleTheme": "Ganti tema",
+    "channels": "Kanal Lain"
   },
   "footer": {
     "tagline": "Dibangun dengan Next.js & Tailwind CSS.",

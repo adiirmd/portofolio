@@ -1,16 +1,25 @@
 [
   {
     "title": "Automated Finance Tracker",
-    "description": "Sistem catatan keuangan pribadi otomatis. Setiap notif transaksi di HP diteruskan ke webhook dan ditulis langsung ke Google Sheets. Dilengkapi web dashboard untuk edit manual dan bot Telegram untuk rekap harian jam 23:58 serta alert pengeluaran kelipatan 50k buat kontrol finansial.",
-    "tech": ["Node.js", "Webhooks", "Google Sheets API", "Telegram Bot API"],
+    "description": "Sistem pencatatan keuangan pribadi yang berjalan otomatis. Setiap notifikasi transaksi pada ponsel diteruskan ke webhook lalu ditulis langsung ke Google Sheets. Dilengkapi dashboard web untuk penyuntingan manual serta bot Telegram yang mengirim rekap harian pukul 23.58 dan peringatan setiap pengeluaran mencapai kelipatan 50 ribu sebagai alat kontrol finansial.",
+    "tech": [
+      "Node.js",
+      "Webhooks",
+      "Google Sheets API",
+      "Telegram Bot API"
+    ],
     "image": "/images/finance-tracker.jpg",
     "link": "https://finance.adiirmd.my.id",
     "github": "https://github.com/adiirmd/FinanceTracker"
   },
   {
     "title": "Web Streaming Music Player",
-    "description": "Web app pemutar musik streaming mengambil data dari API YouTube Music dengan UI mirip Spotify. Dilengkapi berbagai fitur seperti unduh lagu dan nampilin lirik secara real time.",
-    "tech": ["Next.js", "Tailwind CSS", "YouTube Music API"],
+    "description": "Aplikasi web pemutar musik streaming yang mengambil data dari API YouTube Music dengan antarmuka menyerupai Spotify. Menyediakan berbagai fitur seperti pengunduhan lagu dan penayangan lirik secara real time.",
+    "tech": [
+      "Next.js",
+      "Tailwind CSS",
+      "YouTube Music API"
+    ],
     "image": "/images/web-music.jpg",
     "link": "https://music.adiirmd.my.id",
     "github": "https://github.com/adiirmd/arMusic"

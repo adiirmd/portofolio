@@ -28,7 +28,7 @@ export default function ThemeToggle() {
 
   return (
     <button type="button" onClick={toggle} className="icon-btn" aria-label={site.labels.toggleTheme}>
-      {mounted && !isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      {mounted && !isDark ? <Sun className="h-[18px] w-[18px]" /> : <Moon className="h-[18px] w-[18px]" />}
     </button>
   );
 }

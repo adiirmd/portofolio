@@ -13,13 +13,13 @@ export default function SectionHeading({ eyebrow, title, subtitle, action }: Pro
     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-        <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
-        {subtitle ? <p className="muted mt-2 max-w-2xl text-sm sm:text-base">{subtitle}</p> : null}
+        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-[2.25rem]">{title}</h2>
+        {subtitle ? <p className="muted mt-3 max-w-2xl text-base sm:text-[17px]">{subtitle}</p> : null}
       </div>
       {action ? (
         <Link
           href={action.href}
-          className="muted inline-flex items-center gap-1.5 text-sm transition hover:text-accent-soft"
+          className="muted inline-flex shrink-0 items-center gap-1.5 text-[15px] font-medium transition hover:text-accent-soft"
         >
           {action.label}
           <ArrowRight className="h-4 w-4" />

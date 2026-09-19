@@ -34,20 +34,20 @@ export default function AboutPage() {
     <>
       <PageHeader eyebrow={section.eyebrow} title={section.title} />
 
-      <section className="shell grid gap-10 pb-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+      <section className="shell grid gap-10 pb-12 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
         <div>
-          <p className="muted text-sm leading-relaxed sm:text-base">{profile.bio}</p>
+          <p className="muted text-[17px] leading-[1.8]">{profile.bio}</p>
 
           <h2 className="sr-only">{section.detailTitle}</h2>
           <dl className="mt-8 grid gap-3 sm:grid-cols-2">
             {details.map(({ icon: Icon, label, value, href }) => (
-              <div key={label} className="surface flex items-center gap-3 p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/12 text-accent">
-                  <Icon className="h-4 w-4" />
+              <div key={label} className="surface flex items-center gap-3.5 p-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                  <Icon className="h-[18px] w-[18px]" />
                 </span>
                 <div className="min-w-0">
-                  <dt className="faint text-[11px] uppercase tracking-wide">{label}</dt>
-                  <dd className="break-words text-sm font-medium">
+                  <dt className="faint text-xs uppercase tracking-wide">{label}</dt>
+                  <dd className="mt-0.5 break-words text-[15px] font-medium">
                     {href ? (
                       <a href={href} className="transition hover:text-accent-soft">
                         {value}
@@ -60,9 +60,18 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
+
+          <h2 className="mt-12 text-2xl font-bold tracking-tight">{section.skillTitle}</h2>
+          <ul className="mt-5 flex flex-wrap gap-2.5">
+            {profile.skills.map((skill) => (
+              <li key={skill} className="chip px-4 py-2 text-[13px]">
+                {skill}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xs lg:max-w-[320px] lg:justify-self-end">
+        <div className="relative mx-auto w-full max-w-xs lg:sticky lg:top-28 lg:max-w-none">
           <div
             className="absolute -right-3 top-5 hidden h-full w-full rotate-6 rounded-3xl border border-accent/25 bg-accent/5 sm:block"
             aria-hidden
@@ -73,7 +82,7 @@ export default function AboutPage() {
                 src="/images/profile.jpg"
                 alt={profile.name}
                 fill
-                sizes="(max-width: 1024px) 80vw, 360px"
+                sizes="(max-width: 1024px) 80vw, 340px"
                 className="object-cover object-top"
               />
             </div>
@@ -81,30 +90,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="shell py-10">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">{section.skillTitle}</h2>
-        <ul className="mt-5 flex flex-wrap gap-2.5">
-          {profile.skills.map((skill) => (
-            <li key={skill} className="chip px-4 py-1.5 text-xs">
-              {skill}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="shell pb-12">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">{section.experienceTitle}</h2>
-        <ol className="mt-5 space-y-4">
+      <section className="shell pb-16">
+        <h2 className="text-2xl font-bold tracking-tight">{section.experienceTitle}</h2>
+        <ol className="mt-6 space-y-4">
           {profile.experience.map((item) => (
-            <li key={`${item.title}-${item.company}`} className="surface surface-hover p-5">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
-                    <Briefcase className="h-[18px] w-[18px]" />
+            <li key={`${item.title}-${item.company}`} className="surface surface-hover p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                    <Briefcase className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold sm:text-base">{item.title}</h3>
-                    <p className="muted mt-1 text-sm">{item.company}</p>
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="muted mt-1.5 text-[15px]">{item.company}</p>
                   </div>
                 </div>
                 <span className="chip shrink-0 self-start">{item.duration}</span>
