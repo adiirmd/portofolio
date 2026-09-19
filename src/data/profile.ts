@@ -1,6 +1,5 @@
 import photoHome from '@/assets/photo-home.jpg';
-// TODO: ganti ke '@/assets/photo-about.jpg' setelah foto kedua diunggah.
-import photoAbout from '@/assets/photo-home.jpg';
+import photoAbout from '@/assets/photo-about.jpg';
 
 import type { Profile } from '@/lib/types';
 
