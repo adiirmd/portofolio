@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProjectsContent from "@/components/ProjectsContent";
 import JsonLd from "@/components/JsonLd";
 import { defaultCopy, site } from "@/lib/data";
-import { projectsSchema } from "@/lib/schema";
+import { breadcrumbSchema, projectsSchema } from "@/lib/schema";
 
 const section = defaultCopy.sections.projects;
 
@@ -21,6 +21,12 @@ export default function ProjectsPage() {
   return (
     <>
       <JsonLd data={projectsSchema()} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: defaultCopy.nav.home, href: "/" },
+          { name: section.title, href: "/projects" },
+        ])}
+      />
       <ProjectsContent />
     </>
   );

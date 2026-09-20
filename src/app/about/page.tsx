@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import AboutContent from "@/components/AboutContent";
+import JsonLd from "@/components/JsonLd";
 import { defaultCopy, profile } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const section = defaultCopy.sections.about;
 
@@ -16,5 +18,15 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutContent />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: defaultCopy.nav.home, href: "/" },
+          { name: section.title, href: "/about" },
+        ])}
+      />
+      <AboutContent />
+    </>
+  );
 }
