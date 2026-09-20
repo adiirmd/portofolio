@@ -6,7 +6,7 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Adi Romadhon",
   socials: {
-    portal: "https://link.adiirmd.my.id",
+    portal: "https://link.adiirmd.id",
     github: "https://github.com/adiirmd",
     linkedin: "https://www.linkedin.com/in/adi-romadhon-a925062b7/",
     email: "adiromadhon0@gmail.com",

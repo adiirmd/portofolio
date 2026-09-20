@@ -8,14 +8,14 @@ export const projects: ProjectAsset[] = [
     id: "financeTracker",
     tech: ["Node.js", "Webhooks", "Google Sheets API", "Telegram Bot API"],
     image: financeTracker,
-    link: "https://finance.adiirmd.my.id",
+    link: "https://finance.adiirmd.id",
     github: "https://github.com/adiirmd/FinanceTracker",
   },
   {
     id: "webMusic",
     tech: ["Next.js", "Tailwind CSS", "YouTube Music API"],
     image: webMusic,
-    link: "https://music.adiirmd.my.id",
+    link: "https://music.adiirmd.id",
     github: "https://github.com/adiirmd/arMusic",
   },
 ];

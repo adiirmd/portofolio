@@ -1,7 +1,7 @@
 import type { RouteDef } from "@/lib/types";
 
 export const site = {
-  url: "https://adiirmd.my.id",
+  url: "https://adiirmd.id",
   brand: "adiirmd",
   routes: [
     { key: "home", href: "/" },
