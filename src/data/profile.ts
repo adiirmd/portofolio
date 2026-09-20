@@ -1,5 +1,5 @@
-import photoHome from "@/assets/photo-home.jpg";
-import photoAbout from "@/assets/photo-about.jpg";
+import photoHome from "@/assets/photo-home.webp";
+import photoAbout from "@/assets/photo-about.webp";
 
 import type { Profile } from "@/lib/types";
 

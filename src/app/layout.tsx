@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import ogImage from "@/assets/og-image.jpg";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,11 +32,13 @@ export const metadata: Metadata = {
     siteName: profile.name,
     title: defaultCopy.meta.title,
     description: defaultCopy.meta.description,
+    // A dedicated opaque image. The site photos are transparent cutouts, which
+    // would float over whatever colour a chat app paints behind them.
     images: [
       {
-        url: profile.photos.home.src,
-        width: profile.photos.home.width,
-        height: profile.photos.home.height,
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
         alt: profile.name,
       },
     ],
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultCopy.meta.title,
     description: defaultCopy.meta.description,
-    images: [profile.photos.home.src],
+    images: [ogImage.src],
   },
   robots: {
     index: true,
