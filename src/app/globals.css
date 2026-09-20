@@ -15,11 +15,11 @@
   --border-alpha: 1;
   /* Cards sit on a near white page, so they need a real frame plus a touch of
      elevation. Without both they melt into the background. */
-  --card-border: 203 213 225;
+  --card-border: 148 163 184;
   --card-border-alpha: 1;
   --card-border-hover: 29 78 216;
   --card-border-hover-alpha: 0.55;
-  --card-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 12px 32px -20px rgb(15 23 42 / 0.28);
+  --card-shadow: 0 1px 3px rgb(15 23 42 / 0.08), 0 14px 34px -18px rgb(15 23 42 / 0.35);
   --card-shadow-hover: 0 2px 6px rgb(15 23 42 / 0.06), 0 20px 44px -24px rgb(29 78 216 / 0.45);
   --btn-shadow: 0 1px 2px rgb(15 23 42 / 0.08), 0 8px 20px -10px rgb(29 78 216 / 0.5);
   --btn-shadow-hover: 0 2px 4px rgb(15 23 42 / 0.1), 0 12px 26px -10px rgb(29 78 216 / 0.6);
