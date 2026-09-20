@@ -5,12 +5,8 @@ type Props = {
 };
 
 export default function PageHeader({ eyebrow, title, subtitle }: Props) {
-  // Tanpa subjudul, blok judul jadi ringan dan terlihat menggantung di atas.
-  // Beri ruang atas lebih dan rapatkan ke konten di bawahnya agar menyatu.
-  const spacing = subtitle ? 'pb-8 pt-9 sm:pb-14 sm:pt-20' : 'pb-6 pt-11 sm:pb-8 sm:pt-28';
-
   return (
-    <section className={`shell ${spacing}`}>
+    <section className="shell pb-8 pt-8 sm:pb-12 sm:pt-16">
       <p className="eyebrow">{eyebrow}</p>
       <h1 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">{title}</h1>
       {subtitle ? (

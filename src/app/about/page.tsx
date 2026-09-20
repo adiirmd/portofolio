@@ -32,14 +32,12 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHeader eyebrow={section.eyebrow} title={section.title} />
+      <PageHeader eyebrow={section.eyebrow} title={section.title} subtitle={profile.bio} />
 
       <section className="shell grid gap-10 pb-14 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
         <div>
-          <p className="muted text-[17px] leading-[1.8]">{profile.bio}</p>
-
           <h2 className="sr-only">{section.detailTitle}</h2>
-          <dl className="mt-8 grid gap-3 sm:grid-cols-2">
+          <dl className="grid gap-3 sm:grid-cols-2">
             {details.map(({ icon: Icon, label, value, href }) => (
               <div key={label} className="surface flex items-center gap-3.5 p-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
