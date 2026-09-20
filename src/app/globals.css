@@ -13,6 +13,18 @@
   --surface-alpha: 1;
   --border: 203 213 225;
   --border-alpha: 1;
+  /* Cards sit on a near white page, so they need a real frame plus a touch of
+     elevation. Without both they melt into the background. */
+  --card-border: 203 213 225;
+  --card-border-alpha: 1;
+  --card-border-hover: 29 78 216;
+  --card-border-hover-alpha: 0.55;
+  --card-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 12px 32px -20px rgb(15 23 42 / 0.28);
+  --card-shadow-hover: 0 2px 6px rgb(15 23 42 / 0.06), 0 20px 44px -24px rgb(29 78 216 / 0.45);
+  --btn-shadow: 0 1px 2px rgb(15 23 42 / 0.08), 0 8px 20px -10px rgb(29 78 216 / 0.5);
+  --btn-shadow-hover: 0 2px 4px rgb(15 23 42 / 0.1), 0 12px 26px -10px rgb(29 78 216 / 0.6);
+  --divider: 226 232 240;
+  --divider-alpha: 1;
   --section-border: 29 78 216;
   --section-border-alpha: 0.2;
   --text: #0f172a;
@@ -33,6 +45,18 @@
   --surface-alpha: 0.035;
   --border: 255 255 255;
   --border-alpha: 0.08;
+  /* Dark mode already separates cards by luminance, so the frame stays faint
+     and no drop shadow is needed. */
+  --card-border: 255 255 255;
+  --card-border-alpha: 0.08;
+  --card-border-hover: 96 165 250;
+  --card-border-hover-alpha: 0.5;
+  --card-shadow: none;
+  --card-shadow-hover: 0 18px 45px -25px rgb(29 78 216 / 0.4);
+  --btn-shadow: none;
+  --btn-shadow-hover: none;
+  --divider: 255 255 255;
+  --divider-alpha: 0.08;
   --section-border: 255 255 255;
   --section-border-alpha: 0.08;
   --text: #eef2f9;
@@ -90,7 +114,7 @@ body {
   .chip {
     @apply inline-flex items-center rounded-full px-3.5 py-1.5 text-xs font-medium tracking-wide;
     background-color: var(--chip-bg);
-    border: 1px solid rgb(var(--border) / var(--border-alpha));
+    border: 1px solid rgb(var(--card-border) / var(--card-border-alpha));
     color: var(--text-muted);
   }
 
@@ -112,6 +136,11 @@ body {
 
   .btn-primary {
     @apply inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-semibold text-white transition hover:bg-accent-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+    box-shadow: var(--btn-shadow);
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--btn-shadow-hover);
   }
 
   .btn-ghost {
@@ -193,32 +222,20 @@ body {
   border-color: rgb(var(--enhanced-border) / 0.3);
 }
 
-/* Fix selection color in light theme */
-::selection {
-  background-color: rgb(59 130 246 / 0.2);
-  color: inherit;
-}
-
-::-moz-selection {
-  background-color: rgb(59 130 246 / 0.2);
-  color: inherit;
-}
-
-/* Enhanced borders for light theme */
-:root {
-  --enhanced-border: 148 163 184;
-}
-
-.dark {
-  --enhanced-border: 255 255 255;
-}
-
+/* Card frames. Declared outside the components layer so they win over the
+   base .surface rule, and driven by tokens so each theme gets its own weight. */
 .surface {
-  border-color: rgb(var(--enhanced-border) / 0.2);
+  border-color: rgb(var(--card-border) / var(--card-border-alpha));
+  box-shadow: var(--card-shadow);
 }
 
-.surface:hover {
-  border-color: rgb(var(--enhanced-border) / 0.3);
+.surface-hover:hover {
+  border-color: rgb(var(--card-border-hover) / var(--card-border-hover-alpha));
+  box-shadow: var(--card-shadow-hover);
+}
+
+.divider-top {
+  border-top: 1px solid rgb(var(--divider) / var(--divider-alpha));
 }
 
 .site-backdrop {

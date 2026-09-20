@@ -5,8 +5,6 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { useI18n } from "@/components/LanguageProvider";
 import type { ProjectAsset } from "@/lib/types";
 
-const dividerStyle = { borderTop: "1px solid rgb(var(--border) / var(--border-alpha))" };
-
 export default function ProjectCard({ project }: { project: ProjectAsset }) {
   const { t } = useI18n();
   const content = t.projects[project.id];
@@ -39,7 +37,7 @@ export default function ProjectCard({ project }: { project: ProjectAsset }) {
           </ul>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-5 pt-5" style={dividerStyle}>
+        <div className="divider-top mt-6 flex flex-wrap items-center gap-5 pt-5">
           <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[15px] font-medium text-accent transition hover:opacity-80">
             {t.labels.liveDemo}
             <ArrowUpRight className="h-4 w-4" />
