@@ -22,6 +22,11 @@
   --card-shadow: 0 1px 3px rgb(15 23 42 / 0.08), 0 14px 34px -18px rgb(15 23 42 / 0.35);
   --card-shadow-hover: 0 2px 6px rgb(15 23 42 / 0.06), 0 20px 44px -24px rgb(29 78 216 / 0.45);
   --btn-shadow: 0 1px 2px rgb(15 23 42 / 0.08), 0 8px 20px -10px rgb(29 78 216 / 0.5);
+  /* Latar foto dipindahkan dari berkas gambar ke CSS supaya ikut berganti tema. */
+  --photo-base: linear-gradient(180deg, #eef2f8 0%, #f8fafc 100%);
+  --photo-glow: rgb(59 130 246 / 0.2);
+  --photo-glow-soft: rgb(29 78 216 / 0.1);
+  --photo-drop: drop-shadow(0 16px 26px rgb(15 23 42 / 0.3));
   --btn-shadow-hover: 0 2px 4px rgb(15 23 42 / 0.1), 0 12px 26px -10px rgb(29 78 216 / 0.6);
   --divider: 226 232 240;
   --divider-alpha: 1;
@@ -54,6 +59,10 @@
   --card-shadow: none;
   --card-shadow-hover: 0 18px 45px -25px rgb(29 78 216 / 0.4);
   --btn-shadow: none;
+  --photo-base: linear-gradient(180deg, #0a1022 0%, #05070d 100%);
+  --photo-glow: rgb(37 99 235 / 0.38);
+  --photo-glow-soft: rgb(96 165 250 / 0.14);
+  --photo-drop: drop-shadow(0 22px 34px rgb(2 6 23 / 0.75));
   --btn-shadow-hover: none;
   --divider: 255 255 255;
   --divider-alpha: 0.08;
@@ -205,23 +214,6 @@ body {
   color: inherit;
 }
 
-/* Enhanced borders for light theme */
-:root {
-  --enhanced-border: 148 163 184;
-}
-
-.dark {
-  --enhanced-border: 255 255 255;
-}
-
-.surface {
-  border-color: rgb(var(--enhanced-border) / 0.2);
-}
-
-.surface:hover {
-  border-color: rgb(var(--enhanced-border) / 0.3);
-}
-
 /* Card frames. Declared outside the components layer so they win over the
    base .surface rule, and driven by tokens so each theme gets its own weight. */
 .surface {
@@ -236,6 +228,34 @@ body {
 
 .divider-top {
   border-top: 1px solid rgb(var(--divider) / var(--divider-alpha));
+}
+
+/* Panel di belakang foto potongan. Sorot radial jatuh di belakang kepala, dan
+   pola gridnya menyalin .site-backdrop agar senada dengan latar halaman. */
+.photo-panel {
+  background:
+    radial-gradient(58% 42% at 50% 20%, var(--photo-glow), transparent 72%),
+    radial-gradient(90% 55% at 50% 104%, var(--photo-glow-soft), transparent 68%),
+    var(--photo-base);
+}
+
+.photo-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgb(var(--card-border) / calc(var(--card-border-alpha) * 0.28)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--card-border) / calc(var(--card-border-alpha) * 0.28)) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 28%, #000 15%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 28%, #000 15%, transparent 78%);
+}
+
+/* Kaki subjek dileburkan ke panel supaya tidak terlihat seperti ditempel. */
+.photo-subject {
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 99%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 99%);
+  filter: var(--photo-drop);
 }
 
 .site-backdrop {
