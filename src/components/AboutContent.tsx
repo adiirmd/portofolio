@@ -26,7 +26,7 @@ export default function AboutContent() {
     <>
       <PageHeader eyebrow={section.eyebrow} title={section.title} subtitle={t.profile.bio} />
 
-      <section className="section-divider shell grid gap-10 pb-14 pt-16 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
+      <section className="shell grid gap-10 pb-14 pt-16 lg:grid-cols-[1fr_340px] lg:items-start lg:gap-14">
         <div>
           <h2 className="sr-only">{section.detailTitle}</h2>
           <dl className="grid gap-3 sm:grid-cols-2">
@@ -66,7 +66,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="section-divider shell pb-16 pt-16">
+      <section className="shell pb-16 pt-16">
         <h2 className="text-2xl font-bold tracking-tight">{section.experienceTitle}</h2>
         <ol className="mt-6 space-y-4">
           {t.profile.experience.map((item) => (

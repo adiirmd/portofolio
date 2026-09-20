@@ -10,7 +10,7 @@ export default function FeaturedProjects() {
   const section = t.sections.featured;
 
   return (
-    <section className="section-divider shell pb-16 pt-16" id="featured">
+    <section className="shell pb-16 pt-16" id="featured">
       <SectionHeading eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} action={{ label: section.viewAll, href: "/projects" }} />
 
       <div className="mt-9 grid gap-6 sm:grid-cols-2">
