@@ -1,4 +1,5 @@
-import type { StaticImageData } from 'next/image';
+import type { StaticImageData } from "next/image";
+import type { NavKey, ProjectKey } from "@/lib/i18n";
 
 export type Experience = {
   title: string;
@@ -8,25 +9,28 @@ export type Experience = {
 
 export type Profile = {
   name: string;
-  role: string;
-  location: string;
-  bio: string;
+  socials: Record<string, string>;
   photos: {
     home: StaticImageData;
     about: StaticImageData;
   };
-  experience: Experience[];
-  skills: string[];
-  socials: Record<string, string>;
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
+export type ProjectAsset = {
+  id: ProjectKey;
+  tech: readonly string[];
   image: StaticImageData;
   link: string;
   github: string;
 };
 
-export type NavItem = { label: string; href: string };
+export type NavItem = {
+  key: NavKey;
+  href: string;
+  label: string;
+};
+
+export type RouteDef = {
+  key: NavKey;
+  href: string;
+};

@@ -2,20 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light mode maps onto the Tailwind slate palette so text keeps a strong,
+   readable contrast instead of washing out against the page.
+   slate-50 #f8fafc, slate-100 #f1f5f9, slate-200 #e2e8f0, slate-600 #475569,
+   slate-700 #334155, slate-800 #1e293b, slate-900 #0f172a. */
 :root {
-  --bg: #f6f8fc;
+  --bg: #f8fafc;
   --bg-elevated: #ffffff;
   --surface: 255 255 255;
   --surface-alpha: 1;
-  --border: 15 23 42;
-  --border-alpha: 0.1;
-  --text: #0b1220;
-  --text-muted: #55617a;
-  --text-faint: #7b869c;
-  --bg-tint: #eaf0fb;
-  --nav-bg: rgba(246, 248, 252, 0.82);
-  --glow-a: rgba(59, 130, 246, 0.18);
-  --glow-b: rgba(37, 99, 235, 0.1);
+  --border: 203 213 225;
+  --border-alpha: 1;
+  --section-border: 29 78 216;
+  --section-border-alpha: 0.2;
+  --text: #0f172a;
+  --text-muted: #1e293b;
+  --text-faint: #334155;
+  --chip-bg: #f1f5f9;
+  --bg-tint: #eef2f8;
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --glow-a: rgba(59, 130, 246, 0.16);
+  --glow-b: rgba(37, 99, 235, 0.09);
+  --grid-alpha: 0.5;
 }
 
 .dark {
@@ -25,13 +33,17 @@
   --surface-alpha: 0.035;
   --border: 255 255 255;
   --border-alpha: 0.08;
+  --section-border: 255 255 255;
+  --section-border-alpha: 0.08;
   --text: #eef2f9;
   --text-muted: #9aa6bd;
   --text-faint: #6b7688;
+  --chip-bg: rgb(255 255 255 / 0.065);
   --bg-tint: #0a1022;
   --nav-bg: rgba(7, 10, 19, 0.82);
   --glow-a: rgba(37, 99, 235, 0.26);
   --glow-b: rgba(59, 130, 246, 0.14);
+  --grid-alpha: 0.5;
 }
 
 * {
@@ -64,7 +76,7 @@ body {
   }
 
   .surface-hover {
-    @apply transition duration-300 hover:border-accent/50 hover:shadow-[0_18px_45px_-25px_rgba(59,130,246,0.65)];
+    @apply transition duration-300 hover:border-accent/60 hover:shadow-[0_18px_45px_-25px_rgba(29,78,216,0.4)];
   }
 
   .muted {
@@ -77,13 +89,25 @@ body {
 
   .chip {
     @apply inline-flex items-center rounded-full px-3.5 py-1.5 text-xs font-medium tracking-wide;
-    background-color: rgb(var(--surface) / calc(var(--surface-alpha) + 0.03));
+    background-color: var(--chip-bg);
     border: 1px solid rgb(var(--border) / var(--border-alpha));
     color: var(--text-muted);
   }
 
+  /* Tech tags sit in dense rows, so they get tighter metrics and a quiet
+     hover state that hints they belong to the card they describe. */
+  .chip-tech {
+    @apply rounded-lg px-2.5 py-1 text-[12px] font-medium leading-5 tracking-normal transition duration-200;
+    background-color: var(--chip-bg);
+  }
+
+  .group:hover .chip-tech {
+    border-color: rgb(29 78 216 / 0.35);
+    color: var(--text);
+  }
+
   .badge-accent {
-    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[13px] font-medium text-accent-soft;
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[13px] font-medium text-accent;
   }
 
   .btn-primary {
@@ -97,8 +121,12 @@ body {
   }
 
   .btn-ghost:hover {
-    border-color: rgb(59 130 246 / 0.5);
-    color: #60a5fa;
+    border-color: rgb(29 78 216 / 0.6);
+    color: var(--accent-text);
+  }
+
+  .dark .btn-ghost:hover {
+    border-color: rgb(96 165 250 / 0.5);
   }
 
   .icon-btn {
@@ -108,8 +136,12 @@ body {
   }
 
   .icon-btn:hover {
-    border-color: rgb(59 130 246 / 0.5);
-    color: #60a5fa;
+    border-color: rgb(29 78 216 / 0.6);
+    color: var(--accent-text);
+  }
+
+  .dark .icon-btn:hover {
+    border-color: rgb(96 165 250 / 0.5);
   }
 
   .eyebrow {
@@ -118,6 +150,11 @@ body {
 
   .gradient-name {
     @apply bg-gradient-to-r from-accent-soft via-accent to-accent-deep bg-clip-text text-transparent;
+  }
+
+  /* Section dividers with subtle borders */
+  .section-divider {
+    border-top: 1px solid rgb(var(--section-border) / var(--section-border-alpha));
   }
 }
 
@@ -128,30 +165,110 @@ body {
   -webkit-backdrop-filter: saturate(160%) blur(14px);
 }
 
+/* Fix selection color in light theme */
+::selection {
+  background-color: rgb(59 130 246 / 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgb(59 130 246 / 0.2);
+  color: inherit;
+}
+
+/* Enhanced borders for light theme */
+:root {
+  --enhanced-border: 148 163 184;
+}
+
+.dark {
+  --enhanced-border: 255 255 255;
+}
+
+.surface {
+  border-color: rgb(var(--enhanced-border) / 0.2);
+}
+
+.surface:hover {
+  border-color: rgb(var(--enhanced-border) / 0.3);
+}
+
+/* Fix selection color in light theme */
+::selection {
+  background-color: rgb(59 130 246 / 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgb(59 130 246 / 0.2);
+  color: inherit;
+}
+
+/* Enhanced borders for light theme */
+:root {
+  --enhanced-border: 148 163 184;
+}
+
+.dark {
+  --enhanced-border: 255 255 255;
+}
+
+.surface {
+  border-color: rgb(var(--enhanced-border) / 0.2);
+}
+
+.surface:hover {
+  border-color: rgb(var(--enhanced-border) / 0.3);
+}
+
 .site-backdrop {
   position: fixed;
   inset: 0;
   z-index: -10;
   pointer-events: none;
-  background:
-    radial-gradient(900px circle at 12% -8%, var(--glow-a), transparent 58%),
-    radial-gradient(760px circle at 88% 2%, var(--glow-b), transparent 55%),
-    linear-gradient(180deg, var(--bg-tint) 0%, var(--bg) 62%);
+  background: radial-gradient(900px circle at 12% -8%, var(--glow-a), transparent 58%), radial-gradient(760px circle at 88% 2%, var(--glow-b), transparent 55%), linear-gradient(180deg, var(--bg-tint) 0%, var(--bg) 62%);
 }
 
 .site-backdrop::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgb(var(--border) / calc(var(--border-alpha) * 0.5)) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(var(--border) / calc(var(--border-alpha) * 0.5)) 1px, transparent 1px);
+    linear-gradient(to right, rgb(var(--border) / calc(var(--border-alpha) * var(--grid-alpha))) 1px, transparent 1px), linear-gradient(to bottom, rgb(var(--border) / calc(var(--border-alpha) * var(--grid-alpha))) 1px, transparent 1px);
   background-size: 68px 68px;
   mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 10%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 10%, transparent 75%);
 }
 
-::selection {
-  background: rgba(59, 130, 246, 0.35);
-  color: #fff;
+/* Blue text is theme aware. Light mode keeps a deep blue so it stays readable
+   on a near white page, dark mode switches to a light blue so it does not sink
+   into the near black background. */
+:root {
+  --accent-text: #1d4ed8;
+}
+
+.dark {
+  --accent-text: #60a5fa;
+}
+
+.text-accent,
+.eyebrow,
+.badge-accent {
+  color: var(--accent-text);
+}
+
+.hover\:text-accent:hover,
+.group:hover .group-hover\:text-accent {
+  color: var(--accent-text);
+}
+
+/* The name gradient uses the deep blue ramp on light backgrounds and a light
+   blue ramp in dark mode. */
+.dark .gradient-name {
+  background-image: linear-gradient(to right, #bfdbfe, #60a5fa, #3b82f6);
+}
+
+.dark ::selection {
+  background: rgba(96, 165, 250, 0.3);
+  color: #eff6ff;
 }

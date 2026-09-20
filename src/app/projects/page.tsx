@@ -1,20 +1,19 @@
-import type { Metadata } from 'next';
-import PageHeader from '@/components/PageHeader';
-import ProjectCard from '@/components/ProjectCard';
-import JsonLd from '@/components/JsonLd';
-import { projects, site } from '@/lib/data';
-import { projectsSchema } from '@/lib/schema';
+import type { Metadata } from "next";
+import ProjectsContent from "@/components/ProjectsContent";
+import JsonLd from "@/components/JsonLd";
+import { defaultCopy, site } from "@/lib/data";
+import { projectsSchema } from "@/lib/schema";
 
-const section = site.sections.projects;
+const section = defaultCopy.sections.projects;
 
 export const metadata: Metadata = {
   title: section.title,
   description: section.subtitle,
-  alternates: { canonical: '/projects' },
+  alternates: { canonical: "/projects" },
   openGraph: {
     title: `${section.title} | ${site.brand}`,
     description: section.subtitle,
-    url: '/projects',
+    url: "/projects",
   },
 };
 
@@ -22,15 +21,7 @@ export default function ProjectsPage() {
   return (
     <>
       <JsonLd data={projectsSchema()} />
-      <PageHeader eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} />
-
-      <section className="shell pb-20">
-        <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-      </section>
+      <ProjectsContent />
     </>
   );
 }

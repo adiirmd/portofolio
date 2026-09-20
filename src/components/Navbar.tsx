@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { Menu, Terminal, X } from 'lucide-react';
-import ThemeToggle from '@/components/ThemeToggle';
-import { nav, site } from '@/lib/data';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Menu, Terminal, X } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useI18n } from "@/components/LanguageProvider";
+import { site } from "@/lib/data";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const nav = site.routes.map((route) => ({ ...route, label: t.nav[route.key] }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href);
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? 'nav-scrolled' : ''
-      }`}
-    >
+    <header className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled || open ? "nav-scrolled" : ""}`}>
       <nav className="shell flex h-[72px] items-center justify-between" aria-label="Main">
         <Link href="/" className="flex items-center gap-2.5 text-[17px] font-semibold tracking-tight">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 text-accent">
@@ -43,13 +43,7 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 md:flex">
           {nav.map((item) => (
             <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`rounded-full px-4 py-2 text-[15px] transition ${
-                  isActive(item.href) ? 'text-accent-soft' : 'muted hover:text-accent-soft'
-                }`}
-                aria-current={isActive(item.href) ? 'page' : undefined}
-              >
+              <Link href={item.href} className={`rounded-full px-4 py-2 text-[15px] transition ${isActive(item.href) ? "text-accent" : "muted hover:text-accent"}`} aria-current={isActive(item.href) ? "page" : undefined}>
                 {item.label}
               </Link>
             </li>
@@ -57,15 +51,9 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle />
           <ThemeToggle />
-          <button
-            type="button"
-            className="icon-btn md:hidden"
-            onClick={() => setOpen((value) => !value)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={site.labels.menu}
-          >
+          <button type="button" className="icon-btn md:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-nav" aria-label={t.labels.menu}>
             {open ? <X className="h-[18px] w-[18px]" /> : <Menu className="h-[18px] w-[18px]" />}
           </button>
         </div>
@@ -76,19 +64,14 @@ export default function Navbar() {
           id="mobile-nav"
           className="md:hidden"
           style={{
-            backgroundColor: 'var(--bg-elevated)',
-            borderBottom: '1px solid rgb(var(--border) / var(--border-alpha))',
+            backgroundColor: "var(--bg-elevated)",
+            borderBottom: "1px solid rgb(var(--border) / var(--border-alpha))",
           }}
         >
           <ul className="shell flex flex-col py-3">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`block rounded-xl px-3 py-3 text-[15px] transition ${
-                    isActive(item.href) ? 'bg-accent/10 text-accent-soft' : 'muted'
-                  }`}
-                >
+                <Link href={item.href} className={`block rounded-xl px-3 py-3 text-[15px] transition ${isActive(item.href) ? "bg-accent/10 text-accent" : "muted"}`}>
                   {item.label}
                 </Link>
               </li>

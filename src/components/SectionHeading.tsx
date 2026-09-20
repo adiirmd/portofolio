@@ -19,7 +19,7 @@ export default function SectionHeading({ eyebrow, title, subtitle, action }: Pro
       {action ? (
         <Link
           href={action.href}
-          className="muted inline-flex shrink-0 items-center gap-1.5 text-[15px] font-medium transition hover:text-accent-soft"
+          className="muted inline-flex shrink-0 items-center gap-1.5 text-[15px] font-medium transition hover:text-accent"
         >
           {action.label}
           <ArrowRight className="h-4 w-4" />
