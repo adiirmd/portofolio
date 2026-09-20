@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import LanguageProvider from "@/components/LanguageProvider";
 import { defaultCopy, profile, site } from "@/lib/data";
-import { personSchema } from "@/lib/schema";
+import { personSchema, websiteSchema } from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
@@ -80,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans antialiased">
         <div className="site-backdrop" aria-hidden />
+        <JsonLd data={websiteSchema()} />
         <JsonLd data={personSchema()} />
         <LanguageProvider>
           <Navbar />

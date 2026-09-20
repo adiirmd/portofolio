@@ -24,6 +24,7 @@ const en = {
     home: "Home",
     about: "About",
     projects: "Projects",
+    blog: "Blog",
     contact: "Contact",
   },
   hero: {
@@ -50,6 +51,14 @@ const en = {
       title: "My Projects",
       subtitle: "Work I have built so far, from small operational automation to full web applications.",
     },
+    blog: {
+      eyebrow: "Writing",
+      title: "Notes",
+      subtitle: "Short notes on infrastructure, servers, networking, and the automation I build along the way.",
+      empty: "No notes published yet.",
+      readMore: "Read note",
+      backToList: "All notes",
+    },
     contact: {
       eyebrow: "Say hello",
       title: "Get in Touch",
@@ -71,6 +80,8 @@ const en = {
     toggleTheme: "Change theme",
     toggleLanguage: "Change language",
     portal: "Portal",
+    publishedOn: "Published",
+    minuteRead: "min read",
   },
   profile: {
     role: "IT Infrastructure & Data Center Operator",
@@ -128,6 +139,7 @@ const id: Copy = {
     home: "Beranda",
     about: "Tentang",
     projects: "Project",
+    blog: "Blog",
     contact: "Kontak",
   },
   hero: {
@@ -154,6 +166,14 @@ const id: Copy = {
       title: "Project Saya",
       subtitle: "Pekerjaan yang sudah saya bangun, mulai dari automasi operasional yang sederhana sampai aplikasi web utuh.",
     },
+    blog: {
+      eyebrow: "Tulisan",
+      title: "Catatan",
+      subtitle: "Catatan singkat seputar infrastruktur, server, jaringan, dan automasi yang saya bangun di sepanjang jalan.",
+      empty: "Belum ada catatan yang terbit.",
+      readMore: "Baca catatan",
+      backToList: "Semua catatan",
+    },
     contact: {
       eyebrow: "Sapa Saya",
       title: "Hubungi Saya",
@@ -175,6 +195,8 @@ const id: Copy = {
     toggleTheme: "Ubah tema",
     toggleLanguage: "Ubah bahasa",
     portal: "Portal",
+    publishedOn: "Terbit",
+    minuteRead: "menit baca",
   },
   profile: {
     role: "IT Infrastructure & Data Center Operator",
