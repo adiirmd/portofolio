@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: ProjectAsset }) {
         <p className="muted mt-3 flex-1 text-[15px] leading-[1.7]">{content.description}</p>
 
         <div className="mt-6">
-          <p className="faint text-[11px] font-semibold uppercase tracking-[0.14em]">{t.labels.techStack}</p>
+          <p className="faint text-[12px] font-semibold uppercase tracking-[0.14em]">{t.labels.techStack}</p>
           <ul className="mt-2.5 flex flex-wrap gap-x-2 gap-y-2">
             {project.tech.map((tech) => (
               <li key={tech} className="chip chip-tech">

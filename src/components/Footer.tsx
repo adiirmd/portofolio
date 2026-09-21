@@ -9,10 +9,10 @@ export default function Footer() {
   return (
     <footer className="section-divider">
       <div className="shell py-4">
-        <p className="faint text-center text-[11px]">
+        <p className="faint text-center text-[13px]">
           © {new Date().getFullYear()} {profile.name}. {t.footer.copyright}
         </p>
-        <p className="faint mt-0.5 text-center text-[9px]">{t.footer.tagline}</p>
+        <p className="faint mt-0.5 text-center text-[13px]">{t.footer.tagline}</p>
       </div>
     </footer>
   );

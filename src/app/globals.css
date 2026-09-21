@@ -89,6 +89,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* The whole interface renders at 85 percent. Scaling the root font size
+     would only shrink rem based values, and this design carries many explicit
+     pixel sizes, so the result would be uneven. Browsers without zoom support,
+     meaning Firefox below 126, simply render at full size. */
+  zoom: 0.85;
 }
 
 body {
