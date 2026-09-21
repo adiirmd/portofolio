@@ -23,6 +23,7 @@ const en = {
   nav: {
     home: "Home",
     about: "About",
+    certifications: "Certifications",
     projects: "Projects",
     contact: "Contact",
   },
@@ -44,6 +45,12 @@ const en = {
       detailTitle: "Details",
       skillTitle: "Skills",
       experienceTitle: "Experience",
+    },
+    certifications: {
+      eyebrow: "Credentials",
+      title: "Certifications & Courses",
+      subtitle: "Training I have completed and the credentials that came out of it, newest first.",
+      empty: "No certificates published yet.",
     },
     projects: {
       eyebrow: "Portfolio",
@@ -71,6 +78,10 @@ const en = {
     toggleTheme: "Change theme",
     toggleLanguage: "Change language",
     portal: "Portal",
+    issued: "Issued",
+    validUntil: "Valid until",
+    viewCertificate: "View certificate",
+    close: "Close",
   },
   profile: {
     role: "IT Infrastructure & Data Center Operator",
@@ -127,6 +138,7 @@ const id: Copy = {
   nav: {
     home: "Beranda",
     about: "Tentang",
+    certifications: "Sertifikasi",
     projects: "Project",
     contact: "Kontak",
   },
@@ -148,6 +160,12 @@ const id: Copy = {
       detailTitle: "Detail",
       skillTitle: "Keahlian",
       experienceTitle: "Pengalaman",
+    },
+    certifications: {
+      eyebrow: "Kredensial",
+      title: "Sertifikasi & Kursus",
+      subtitle: "Pelatihan yang sudah saya selesaikan beserta kredensial yang dihasilkan, dari yang terbaru.",
+      empty: "Belum ada sertifikat yang ditampilkan.",
     },
     projects: {
       eyebrow: "Portofolio",
@@ -175,6 +193,10 @@ const id: Copy = {
     toggleTheme: "Ubah tema",
     toggleLanguage: "Ubah bahasa",
     portal: "Portal",
+    issued: "Terbit",
+    validUntil: "Berlaku sampai",
+    viewCertificate: "Lihat sertifikat",
+    close: "Tutup",
   },
   profile: {
     role: "IT Infrastructure & Data Center Operator",

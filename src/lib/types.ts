@@ -35,3 +35,14 @@ export type RouteDef = {
   href: string;
 };
 
+
+export type Certification = {
+  id: string;
+  name: string;
+  issuer: string;
+  /** "YYYY-MM". Absent when the certificate does not print an issue date. */
+  issued?: string;
+  /** "YYYY-MM". Absent when the credential does not expire. */
+  expires?: string;
+  image: StaticImageData;
+};

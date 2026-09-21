@@ -1,4 +1,4 @@
-import { absoluteUrl, defaultCopy, profile, projects, site, socialEntries, socialHref } from "@/lib/data";
+import { absoluteUrl, certifications, defaultCopy, profile, projects, site, socialEntries, socialHref } from "@/lib/data";
 
 export function personSchema() {
   return {
@@ -84,3 +84,27 @@ export function projectsSchema() {
   };
 }
 
+
+/** Each credential is tied to the same Person declared in the layout, so the
+ *  training and the profile resolve to one entity. */
+export function certificationsSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: defaultCopy.sections.certifications.title,
+    itemListElement: certifications.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "EducationalOccupationalCredential",
+        name: item.name,
+        credentialCategory: "certificate",
+        recognizedBy: { "@type": "Organization", name: item.issuer },
+        image: absoluteUrl(item.image.src),
+        ...(item.issued ? { dateCreated: item.issued } : {}),
+        ...(item.expires ? { expires: item.expires } : {}),
+        about: { "@id": `${site.url}/#person` },
+      },
+    })),
+  };
+}

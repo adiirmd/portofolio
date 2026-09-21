@@ -6,6 +6,7 @@ export const site = {
   routes: [
     { key: "home", href: "/" },
     { key: "about", href: "/about" },
+    { key: "certifications", href: "/certifications" },
     { key: "projects", href: "/projects" },
     { key: "contact", href: "/contact" },
   ] as RouteDef[],
