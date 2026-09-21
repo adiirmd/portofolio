@@ -7,6 +7,9 @@
    slate-50 #f8fafc, slate-100 #f1f5f9, slate-200 #e2e8f0, slate-600 #475569,
    slate-700 #334155, slate-800 #1e293b, slate-900 #0f172a. */
 :root {
+  /* One source of truth for the interface scale. The body height below divides
+     by it, so the two can never drift apart. */
+  --app-zoom: 0.85;
   --bg: #f8fafc;
   --bg-elevated: #ffffff;
   --surface: 255 255 255;
@@ -93,15 +96,18 @@ html {
      would only shrink rem based values, and this design carries many explicit
      pixel sizes, so the result would be uneven. Browsers without zoom support,
      meaning Firefox below 126, simply render at full size. */
-  zoom: 0.85;
+  zoom: var(--app-zoom);
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  min-height: 100dvh;
+  /* Viewport units are not shrunk by zoom, but the result is, so a plain
+     100vh would only reach 85 percent down the screen and leave a gap under
+     the footer on short pages. Dividing by the scale cancels that out. */
+  min-height: calc(100vh / var(--app-zoom));
+  min-height: calc(100dvh / var(--app-zoom));
   display: flex;
   flex-direction: column;
 }
