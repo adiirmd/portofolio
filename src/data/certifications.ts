@@ -22,6 +22,12 @@ export const certifications: Certification[] = [
     image: aseanAiCareer,
   },
   {
+    id: "redhat-rhsa1",
+    name: "Red Hat System Administration I",
+    issuer: "Red Hat Academy",
+    image: redhatRhsa1,
+  },
+  {
     id: "rtl-cllmsp",
     name: "Certified LLM Security Professional (CLLMSP)",
     issuer: "Red Team Leaders",
@@ -43,13 +49,6 @@ export const certifications: Certification[] = [
     image: tplinkOcnaRouting,
   },
   {
-    id: "tplink-ocna-wireless",
-    name: "Omada Certified Network Administrator (OCNA) Wireless",
-    issuer: "TP-Link",
-    expires: "2028-02",
-    image: tplinkOcnaWireless,
-  },
-  {
     id: "dlink-cna",
     name: "D-Link Certified Network Associate",
     issuer: "D-Link",
@@ -58,17 +57,18 @@ export const certifications: Certification[] = [
     image: dlinkCna,
   },
   {
+    id: "tplink-ocna-wireless",
+    name: "Omada Certified Network Administrator (OCNA) Wireless",
+    issuer: "TP-Link",
+    expires: "2028-02",
+    image: tplinkOcnaWireless,
+  },
+  {
     id: "mikrotik-mtcna",
     name: "MikroTik Certified Network Associate (MTCNA)",
     issuer: "MikroTik",
     issued: "2024-09",
     expires: "2027-09",
     image: mikrotikMtcna,
-  },
-  {
-    id: "redhat-rhsa1",
-    name: "Red Hat System Administration I",
-    issuer: "Red Hat Academy",
-    image: redhatRhsa1,
   },
 ];
