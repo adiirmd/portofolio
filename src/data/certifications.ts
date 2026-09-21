@@ -10,10 +10,11 @@ import tplinkOcnaWireless from "@/assets/certs/tplink-ocna-wireless.webp";
 import type { Certification } from "@/lib/types";
 
 /**
- * Newest first, since that is what a reader looks for. Names and issuers are
- * proper nouns, so they stay out of the translation files and live here.
+ * Names and issuers are proper nouns, so they stay out of the translation
+ * files and live here. Write new entries anywhere in this list, the order on
+ * the page is derived below.
  */
-export const certifications: Certification[] = [
+const entries: Certification[] = [
   {
     id: "asean-ai-career",
     name: "AI Career Readiness Training",
@@ -75,3 +76,14 @@ export const certifications: Certification[] = [
     image: mikrotikMtcna,
   },
 ];
+
+/**
+ * Newest first, derived from the issue date instead of the order written
+ * above, so adding a certificate cannot put the list out of sequence. The
+ * "YYYY-MM" form sorts chronologically as plain text. An entry without an
+ * issue date falls to the bottom, and Array.prototype.sort is stable, so
+ * entries sharing the same month keep the order written above.
+ */
+export const certifications: Certification[] = [...entries].sort((a, b) =>
+  (b.issued ?? "").localeCompare(a.issued ?? ""),
+);
