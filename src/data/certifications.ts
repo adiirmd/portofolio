@@ -25,6 +25,7 @@ export const certifications: Certification[] = [
     id: "redhat-rhsa1",
     name: "Red Hat System Administration I",
     issuer: "Red Hat Academy",
+    issued: "2026-06",
     image: redhatRhsa1,
   },
   {

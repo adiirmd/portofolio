@@ -24,9 +24,9 @@ function formatMonth(value: string, lang: string) {
 export default function CertificationCard({ certification, onOpen }: Props) {
   const { t, lang } = useI18n();
 
-  const dates: string[] = [];
-  if (certification.issued) dates.push(`${t.labels.issued} ${formatMonth(certification.issued, lang)}`);
-  if (certification.expires) dates.push(`${t.labels.validUntil} ${formatMonth(certification.expires, lang)}`);
+  // Only the issue date is shown. The expiry stays in the data because the
+  // structured data still declares it, but it is not part of the card.
+  const issued = certification.issued ? `${t.labels.issued} ${formatMonth(certification.issued, lang)}` : null;
 
   return (
     <article className="surface surface-hover group flex h-full flex-col overflow-hidden">
@@ -56,7 +56,7 @@ export default function CertificationCard({ certification, onOpen }: Props) {
       <div className="flex flex-1 flex-col p-5">
         <h2 className="text-base font-bold leading-snug">{certification.name}</h2>
         <p className="muted mt-1.5 text-[15px] font-normal">{certification.issuer}</p>
-        {dates.length > 0 ? <p className="faint mt-2 text-[13px]">{dates.join(" · ")}</p> : null}
+        {issued ? <p className="faint mt-2 text-[13px]">{issued}</p> : null}
       </div>
     </article>
   );
