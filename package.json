@@ -2,11 +2,12 @@
   "name": "portofolio",
   "version": "1.0.0",
   "private": true,
+  "author": "Adi Romadhon <adiromadhon0@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "serve out",
+    "lint": "eslint ."
   },
   "dependencies": {
     "lucide-react": "^0.454.0",
@@ -19,7 +20,10 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.25",
     "postcss": "^8.4.47",
+    "serve": "^14.2.6",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
   }
