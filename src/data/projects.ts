@@ -21,9 +21,9 @@ export const projects: ProjectAsset[] = [
   },
   {
     id: "argame",
-    tech: ["Next.js", "Apache2", "Cloudflare Tunnel", "TypeScript"],
+    tech: ["Next.js", "Vercel", "TypeScript"],
     image: argame,
-    link: "https://game.adiirmd.my.id",
+    link: "https://game.adiirmd.id",
     github: "https://github.com/adiirmd/ARGame",
   },
 ];

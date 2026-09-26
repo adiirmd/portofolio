@@ -113,7 +113,7 @@ const en = {
     argame: {
       title: "AR Game",
       description:
-        "A free browser game portal I built and deployed myself, running on Debian with Apache2 as a reverse proxy and Cloudflare Tunnel in front of it. No ads, no accounts, every game playable instantly with its source and license listed on its own page.",
+        "A free browser game portal I built and deployed myself on Vercel, connected straight to the GitHub repo so every push ships automatically. No ads, no accounts, every game playable instantly with its source and license listed on its own page.",
     },
   },
   notFound: {
@@ -233,7 +233,7 @@ const id: Copy = {
     argame: {
       title: "AR Game",
       description:
-        "Portal game browser gratis yang saya bangun dan deploy sendiri, berjalan di Debian dengan Apache2 sebagai reverse proxy dan Cloudflare Tunnel di depannya. Tanpa iklan, tanpa akun, setiap game langsung bisa dimainkan dengan sumber dan lisensinya dicantumkan di halaman masing-masing.",
+        "Portal game browser gratis yang saya bangun dan deploy sendiri di Vercel, tersambung langsung ke repo GitHub jadi tiap push otomatis ter-deploy. Tanpa iklan, tanpa akun, setiap game langsung bisa dimainkan dengan sumber dan lisensinya dicantumkan di halaman masing-masing.",
     },
   },
   notFound: {
