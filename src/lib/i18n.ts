@@ -110,6 +110,11 @@ const en = {
       title: "Web Streaming Music Player",
       description: "A streaming music player on the web that pulls its catalog from the YouTube Music API, wrapped in an interface that feels close to Spotify. It can download tracks and show lyrics that follow the song in real time.",
     },
+    argame: {
+      title: "AR Game",
+      description:
+        "A free browser game portal I built and deployed myself, running on Debian with Apache2 as a reverse proxy and Cloudflare Tunnel in front of it. No ads, no accounts, every game playable instantly with its source and license listed on its own page.",
+    },
   },
   notFound: {
     title: "This page does not exist",
@@ -224,6 +229,11 @@ const id: Copy = {
       title: "Web Streaming Music Player",
       description:
         "Pemutar musik streaming berbasis web yang mengambil katalognya dari API YouTube Music, dengan tampilan yang terasa mirip Spotify. Aplikasi ini bisa mengunduh lagu dan menampilkan lirik yang mengikuti lagu secara real time.",
+    },
+    argame: {
+      title: "AR Game",
+      description:
+        "Portal game browser gratis yang saya bangun dan deploy sendiri, berjalan di Debian dengan Apache2 sebagai reverse proxy dan Cloudflare Tunnel di depannya. Tanpa iklan, tanpa akun, setiap game langsung bisa dimainkan dengan sumber dan lisensinya dicantumkan di halaman masing-masing.",
     },
   },
   notFound: {
