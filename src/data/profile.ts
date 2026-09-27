@@ -9,6 +9,9 @@ export const profile: Profile = {
     portal: "https://link.adiirmd.id",
     github: "https://github.com/adiirmd",
     linkedin: "https://www.linkedin.com/in/adi-romadhon-a925062b7/",
+    music: "https://music.adiirmd.id",
+    game: "https://game.adiirmd.id",
+    medium: "https://medium.com/@adiirmd",
     email: "adiromadhon0@gmail.com",
   },
   photos: {
